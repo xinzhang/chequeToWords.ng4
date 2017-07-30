@@ -12,6 +12,7 @@ export class ConverterComponent {
 
   chequeAmount:number;
   chequeInWords:string;
+  chequeName:string;
 
   constructor(private chequeService: ChequeService) {
   }
