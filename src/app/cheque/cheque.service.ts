@@ -13,7 +13,7 @@ export class ChequeService {
     url:string = '/api/cheque/convert'
 
     getChequeInWords(val: string):Observable<string> {
-        return this.http.get(this.url + "/" + val)
+        return this.http.get(this.url + "?amount=" + val)
             .map( data => data.json())
             .catch(this.handleError);
     }

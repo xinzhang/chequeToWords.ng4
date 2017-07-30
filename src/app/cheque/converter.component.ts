@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class ConverterComponent {
 
+  chequeAmount:number;
   chequeInWords:string;
 
   constructor(private chequeService: ChequeService) {
@@ -18,7 +19,15 @@ export class ConverterComponent {
   ngOnInit() {
   }
 
-  
+  sendClick() {
+      this.chequeService.getChequeInWords(this.chequeAmount.toString())
+        .subscribe(
+            value=>this.chequeInWords = value,
+            error=>{
+                console.error(error)
+            }
+        )
+  }
 
 }
 

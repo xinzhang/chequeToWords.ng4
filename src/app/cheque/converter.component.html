@@ -1,5 +1,13 @@
+<div class="container">
+<form name="convertForm" class="form-horizontal">
 
-Please enter the cheque amount: 
-<input type="number" class="form-control"></input>
+    Please enter the cheque amount: <br/>
+    <input name="chequeAmount" type="number" 
+        class="form-control" 
+        [(ngModel)]="chequeAmount" required />
+    <button type="button" class="btn btn-default" 
+        (click)="sendClick()">Send</button>
+</form>
 <hr />
 {{chequeInWords}}
+</div>
